@@ -3,11 +3,13 @@
 #include <fstream>
 #include <limits>
 
+
+
 int main() {
 
     int optionSelected;
 
-    std::cout << "Եթե ցանկանում եք կարդալ գրաֆիկը ֆայլից, մուտքագրեք 1, հակառակ դեպքում 2՝ այն տերմինալում մուտքագրելու համար: ";
+    std::cout << "Եթե ցանկանում եք կարդալ գրաֆը ֆայլից, մուտքագրեք 1, հակառակ դեպքում 2՝ այն տերմինալում մուտքագրելու համար: ";
     std::cin >> optionSelected;
 
     Graph* graph;
@@ -68,7 +70,8 @@ int main() {
         std::cout << "Տրված գրաֆը կապակցված է, և կողերի քանակը հավասար գագաթների քանակ - 1" << std::endl;
         std::cout << "Տրված գրաֆը չունի ցիկլ, և կողերի քանակը հավասար գագաթների քանակ - 1" << std::endl;
         std::cout << "Տրված գրաֆը չունի ցիկլ և գրաֆի ցանկացած երկու ոչ հարևան u և v գագաթների համար G + uv գրաֆն ունի ճիշտ մեկ ցիկլ" << std::endl;
-        std::cout << graph->getLeavesCount() << std::endl;
+        std::cout << "Տերևների քանակը = " << graph->getLeavesCount() << std::endl;
+        std::cout << "Ծառի բարձրությունը = " << graph->getTreeHeight() << std::endl;
     }
     else{
         std::cout << "Տրված գրաֆը ծառ չէ" << std::endl;
