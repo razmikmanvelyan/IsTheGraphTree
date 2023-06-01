@@ -146,4 +146,25 @@ public:
         }
         return count;
     }
+    int getHeight(Node* node) const{
+        if (node == nullptr) {
+            return 0;
+        }
+        
+        int maxHeight = 0;
+        for (int i = 1; i < node->neighbors.size(); ++i){
+            int height = getHeight(node->neighbors[i]);
+            maxHeight = std::max(maxHeight, height);
+        }
+        
+        return maxHeight + 1;
+    }
+
+    int getTreeHeight() const{
+        if (this->nodes.empty()) {
+            return 0;
+        }
+        
+        return getHeight(this->nodes[0]);
+    }
 };
